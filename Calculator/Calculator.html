@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" type="text/css" href="Calculator.css">
+    <script src="Calculatorscript.js">
+    </script>
+</head>
+
+<body>
+    <form name="calculator">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="display" id="display" disabled>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td> <input type="button" class="button" value="+" onclick="calculator.dispaly.value += '+'"> </td>
+                <td> <input type="button" class="button" value="-" onclick="calculator.dispaly.value += '-'"> </td>
+                <td> <input type="button" class="button" value="*" onclick="calculator.dispaly.value += '*'"> </td>
+                <td> <input type="button" class="button" value="/" onclick="calculator.dispaly.value += '/'"> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" class="button" value="7" onclick="calculator.dispaly.value += '7'"> </td>
+                <td> <input type="button" class="button" value="8" onclick="calculator.dispaly.value += '8'"> </td>
+                <td> <input type="button" class="button" value="9" onclick="calculator.dispaly.value += '9'"> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" class="button" value="4" onclick="calculator.dispaly.value += '4'"> </td>
+                <td> <input type="button" class="button" value="5" onclick="calculator.dispaly.value += '5'"> </td>
+                <td> <input type="button" class="button" value="6" onclick="calculator.dispaly.value += '6'"> </td>
+
+            </tr>
+            <tr>
+                <td> <input type="button" class="button" value="1" onclick="calculator.dispaly.value += '1'"> </td>
+                <td> <input type="button" class="button" value="2" onclick="calculator.dispaly.value += '2'"> </td>
+                <td> <input type="button" class="button" value="3" onclick="calculator.dispaly.value += '3'"> </td>
+            </tr>
+
+            <tr>
+                <td> <input type="button" class="button" value="0" onclick="calculator.dispaly.value += '0'"> </td>
+                <td> <input type="button" class="button" value="." onclick="calculator.dispaly.value += '.'"> </td>
+                <td> <input type="button" class="button" value="c" onclick="calculator.dispaly.value += ''"> </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td> <input type="button" class="button" value="Enter"> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

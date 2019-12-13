@@ -20,16 +20,16 @@ class Calculator {
         
 
     operatorHandel(operator) {
-var value1 = (this.stack.pop());
-var value2 = (this.stack.pop());
+var value1 = parseInt(this.stack.pop());
+var value2 = parseInt(this.stack.pop());
         if(operator === "*")
             this.display.value = String(value1*value2);
             else if ( operator === "/")
-                this.display.value = String(psrseInt(value1)/psrseInt(value2));
+                this.display.value = String((value1)/(value2));
             else if ( operator === "+")
-                    this.display.value = String(psrseInt(value1)+psrseInt(value2));
+                    this.display.value = String((value1)+(value2));
             else if ( operation === "-")
-                this.display.value = String(psrseInt(value1)-psrseInt(value2));
+                this.display.value = String((value1)-(value2));
         
 
     }

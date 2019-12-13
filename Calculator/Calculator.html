@@ -22,50 +22,56 @@
 </head>
 
 <body>
-    <form name="calculator">
-        <table>
-            <tr>
-                <td>
-                    <input type="text" name="display" id="display" disabled>
-                </td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td> <input type="button" class="button" value="+" onclick="calculator.dispaly.value += '+'"> </td>
-                <td> <input type="button" class="button" value="-" onclick="calculator.dispaly.value += '-'"> </td>
-                <td> <input type="button" class="button" value="*" onclick="calculator.dispaly.value += '*'"> </td>
-                <td> <input type="button" class="button" value="/" onclick="calculator.dispaly.value += '/'"> </td>
-            </tr>
-            <tr>
-                <td> <input type="button" class="button" value="7" onclick="calculator.dispaly.value += '7'"> </td>
-                <td> <input type="button" class="button" value="8" onclick="calculator.dispaly.value += '8'"> </td>
-                <td> <input type="button" class="button" value="9" onclick="calculator.dispaly.value += '9'"> </td>
-            </tr>
-            <tr>
-                <td> <input type="button" class="button" value="4" onclick="calculator.dispaly.value += '4'"> </td>
-                <td> <input type="button" class="button" value="5" onclick="calculator.dispaly.value += '5'"> </td>
-                <td> <input type="button" class="button" value="6" onclick="calculator.dispaly.value += '6'"> </td>
+    <div id="main">
+        <form name="calculator">
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" class="screen" name="display" id="display" disabled>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td> <button type="button" class="operator" value="+"> + </button>
+                    </td>
+                    <td> <button type="button" class="operator" value="-"> - </button>
+                    </td>
+                    <td> <button type="button" class="operator" value="*"> * </button>
+                    </td>
+                    <td> <button type="button" class="operator" value="/">  / </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <button type="button" class="number" value="7"  > 7 </button> </td>
+                    <td> <button type="button" class="number" value="8"  > 8 </button> </td>
+                    <td> <button type="button" class="number" value="9"  > 9 </button> </td>
+                </tr>
+                <tr>
+                    <td> <button type="button" class="number" value="4" > 4 </button> </td>
+                    <td> <button type="button" class="number" value="5"  > 5 </button> </td>
+                    <td> <button type="button" class="number" value="6" > 6 </button> </td>
 
-            </tr>
-            <tr>
-                <td> <input type="button" class="button" value="1" onclick="calculator.dispaly.value += '1'"> </td>
-                <td> <input type="button" class="button" value="2" onclick="calculator.dispaly.value += '2'"> </td>
-                <td> <input type="button" class="button" value="3" onclick="calculator.dispaly.value += '3'"> </td>
-            </tr>
+                </tr>
+                <tr>
+                    <td> <button type="button" class="number" value="1" > 1 </button> </td>
+                    <td> <button type="button" class="number" value="2" > 2 </button> </td>
+                    <td> <button type="button" class="number" value="3"  >3  </button> </td>
+                </tr>
 
-            <tr>
-                <td> <input type="button" class="button" value="0" onclick="calculator.dispaly.value += '0'"> </td>
-                <td> <input type="button" class="button" value="." onclick="calculator.dispaly.value += '.'"> </td>
-                <td> <input type="button" class="button" value="c" onclick="calculator.dispaly.value += ''"> </td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td> <input type="button" class="button" value="Enter"> </td>
-            </tr>
-        </table>
-    </form>
+                <tr>
+                    <td> <button type="button" class="number" value="0"  > 0 </button> </td>
+                    <td> <button type="button" class="decimal" value="."  > . </button> </td>
+                    <td> <inbuttonput type="button" class="clear" value="c"  >  C  </button> </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td> <button type="button" class="enter" value="Enter"> Enter </button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 
 </html>

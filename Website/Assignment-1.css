@@ -1,12 +1,12 @@
 
 
 #container, #blue {
-    background-color: blue;
-    
+    background-color: blue;    
 }
-
-#red1, #red2, #red3 {
+#red1, #red2, #red3, #red4 , #red5{
+    /*
     background-color: red;
+    */
     margin: 3%;
     padding:3%;
 }
@@ -51,3 +51,38 @@
 .button {
     background-color:rgb(14, 113, 255);
 }
+
+#myInput{
+    background-image: url('/css/searchicon.png'); 
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom:12px;
+    background-color: #D3D3D3;
+}
+
+#myURL{
+list-style-type: none;
+padding: 0;
+margin:0;
+}
+
+#myURL li a { 
+    border: 1px solid #ddd;
+   margin-top: -1px; 
+    background-color: #D3D3D3;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+}
+
+#myURL li a:hover:not(.header){
+    background-color: #eee;
+}
+
+

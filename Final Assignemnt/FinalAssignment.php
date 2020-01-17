@@ -38,7 +38,7 @@
     </div>
     <div id="red2" class="row">
         <div id="miniRed" class="collum">
-            <form action="/Finalassignment.php" method="post">
+            <form action="Finalassignment.php" method="post">
                 <h4>Contact me </h4> <br>
                 First name:<br>
                 <input type="text" name="firstname"> <br>
@@ -77,6 +77,7 @@
                 while ($row = $result->fetch_assoc()) {
                     echo("<tr><th scope='row'>" . $row['name'] . "</th>");
                     echo("<th>" . $row['email'] . "</th>");
+                    echo("<th>" . $row['phoneNumber'] . "</th>");
                     echo("<th>" . $row['review'] . "</th></tr>");
 
                 }

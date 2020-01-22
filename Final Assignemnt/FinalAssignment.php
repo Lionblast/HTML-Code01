@@ -3,11 +3,11 @@
 
 <?php 
 
-    $server = "localhost";
-    $username = "g2t";
-    $password = "P@ssw0rd";
+    
+    $username = "ethanv2";
+    $password = "password";
     $database = "Reviews";
-    $table = "reviewList";
+    $server = "localhost";
     
 
     $connection = new mysqli($server, $username, $password, $database);
@@ -28,7 +28,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="Assignment-1.js"></script>
+    <script src="FinalAssignment.js"></script>
 
     <link rel="stylesheet" type="text/css" href="FinalAssignment.css">
 
@@ -40,16 +40,16 @@
     </div>
     <div id="red2" class="row">
         <div id="miniRed" class="collum">
-            <form action="Finalassignment.php" method="post">
+            <form action="FinalAssignment.php" method="post">
                 <h4>Contact me </h4> <br>
-                First name:<br>
+                Name <br>
                 <input type="text" name="name"> <br>
                 E-mail <br>
                 <input type="text" name="email"> <br>
                 Phone Number <br>
                 <input type="text" name="phoneNumber"> <br>
                 Review <br>
-                <textarea rows="4" cols="40">
+                <textarea rows="4" cols="40" name="review">
 
                   </textarea>
                 <div id="enterButton" class="collum"></div>
@@ -57,8 +57,10 @@
         </div>
         </form>
     </div>
-    <div id="tablediv" class="row">
+    <div id="tableHeader" class="row">
         <h2> Past Reviews </h2>
+    </div>
+    <div id="reviewtable" class="row">
         <table class="response">
             <tr>
                 <thread>
@@ -73,7 +75,7 @@
             <?php
 
                 $query = $connection->prepare("SELECT * FROM reviewList");
-
+                $query -> execute();
                 $result = $query->get_result();
 
                 while ($row = $result->fetch_assoc()) {
@@ -113,14 +115,14 @@ if(isset($_POST['review'])){
 
 
 if($name && $email && $phoneNumber && $review) {
-    $query = $connection->prepare("INSERT INTO Reviews (name, email, phoneNumber, review) VALUES (?, ?, ?, ?)");
-    $query->bind_param('sss', $name, $email, $phoneNumber, $review);
+    $query = $connection->prepare("INSERT INTO reviewList (name, email, phoneNumber, review) VALUES (?, ?, ?, ?)");
+    $query->bind_param('ssss', $name, $email, $phoneNumber, $review);
     $query->execute();
     $result = $query->get_result();
 
     $connection->close();
 
-    header('Location;FinalAssignmen.php');
+    header('Location;FinalAssignment.php');
 };
 
 $connection->close();

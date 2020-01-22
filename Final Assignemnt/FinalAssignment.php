@@ -3,10 +3,12 @@
 
 <?php 
 
-    $username = "ethan";
-    $password = "password";
-    $database = "Reviews";
     $server = "localhost";
+    $username = "g2t";
+    $password = "P@ssw0rd";
+    $database = "Reviews";
+    $table = "reviewList";
+    
 
     $connection = new mysqli($server, $username, $password, $database);
     ?>
@@ -41,12 +43,12 @@
             <form action="Finalassignment.php" method="post">
                 <h4>Contact me </h4> <br>
                 First name:<br>
-                <input type="text" name="firstname"> <br>
-                Last name <br>
-                <input type="text" name="lastname"> <br>
-                E-mail address <br>
+                <input type="text" name="name"> <br>
+                E-mail <br>
                 <input type="text" name="email"> <br>
-                Message <br>
+                Phone Number <br>
+                <input type="text" name="phoneNumber"> <br>
+                Review <br>
                 <textarea rows="4" cols="40">
 
                   </textarea>

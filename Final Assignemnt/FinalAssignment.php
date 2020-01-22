@@ -70,9 +70,9 @@
                     <th scope="col">Review</th>
                 </thread>
             </tr>
-        </table>
-        <tbody>
-            <?php
+
+            <tbody>
+                <?php
 
                 $query = $connection->prepare("SELECT * FROM reviewList");
                 $query -> execute();
@@ -86,7 +86,8 @@
 
                 }
                 ?>
-        </tbody>
+            </tbody>
+        </table>
     </div>
 </div>
 </div>

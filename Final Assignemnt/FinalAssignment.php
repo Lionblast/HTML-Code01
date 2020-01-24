@@ -34,45 +34,47 @@
 
 </Head>
 
-<div id="blue" class="container">
-    <div id="red" class="row">
-        <h3> Submit Your Product Review </h3>
-    </div>
-    <div id="red2" class="row">
-        <div id="miniRed" class="collum">
-            <form action="FinalAssignment.php" method="post">
-                <h4>Contact me </h4> <br>
-                Name <br>
-                <input type="text" name="name"> <br>
-                E-mail <br>
-                <input type="text" name="email"> <br>
-                Phone Number <br>
-                <input type="text" name="phoneNumber"> <br>
-                Review <br>
-                <textarea rows="4" cols="40" name="review">
+<body>
+    <div id="blue" class="container">
+        <div id="green" class="col">
+            <div class="red" class="row">
+                <h1> Submit Your Product Review </h1>
+            </div>
+            <div class="red" class="row">
+                <div id="miniRed" class="col">
+                    <form action="FinalAssignment.php" method="post">
+                        <br>
+                        Name <br>
+                        <input type="text" name="name"> <br>
+                        E-mail <br>
+                        <input type="text" name="email"> <br>
+                        Phone Number <br>
+                        <input type="text" name="phoneNumber"> <br>
+                        Review <br>
+                        <textarea rows="4" cols="40" name="review">
 
                   </textarea>
-                <div id="enterButton" class="collum"></div>
-                <input type="submit" value="Submit">
-        </div>
-        </form>
-    </div>
-    <div id="tableHeader" class="row">
-        <h2> Past Reviews </h2>
-    </div>
-    <div id="reviewtable" class="row">
-        <table class="response">
-            <tr>
-                <thread>
-                    <th scope="col">Name</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Phone Number </th>
-                    <th scope="col">Review</th>
-                </thread>
-            </tr>
+                        <div id="enterButton" class="collum"></div>
+                        <input type="submit" value="Submit">
+                </div>
+                </form>
+            </div>
+            <div class="red" class="row">
+                <h2> Past Reviews </h2>
+            </div>
+            <div class="red" class="row">
+                <table class="response">
+                    <tr>
+                        <thread>
+                            <th scope="col">Name</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Phone Number </th>
+                            <th scope="col">Review</th>
+                        </thread>
+                    </tr>
 
-            <tbody>
-                <?php
+                    <tbody>
+                        <?php
 
                 $query = $connection->prepare("SELECT * FROM reviewList");
                 $query -> execute();
@@ -86,11 +88,12 @@
 
                 }
                 ?>
-            </tbody>
-        </table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
-</div>
+</body>
 
 </html>
 <?php 
@@ -123,8 +126,8 @@ if($name && $email && $phoneNumber && $review) {
 
     $connection->close();
 
-    header('Location;FinalAssignment.php');
+    
 };
+header('Location;FinalAssignment.php');
 
-$connection->close();
 ?>

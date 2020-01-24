@@ -1,13 +1,77 @@
+body {
+    background-color: rgb(44, 51, 56);
+    color: white;
+}
+
 #enterButton {
     margin: 5px;
     align-self: center;
 }
 
 table, th, td {
-    border: 1px solid black;
-
+    border: 1px solid  rgb(146, 141, 141);
+    align-self: center;
 }
 
 th, td {
     padding: 15px;
   }
+
+  #blue {
+      text-align: center;
+      height: 95%;
+      width: 100%;
+      
+      
+  }
+
+  h2 {
+      font-family: 'Times New Roman', Times, serif;
+      font-style: bold;
+  }
+
+  h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: bold;
+    font-size: 500%;
+  }
+
+input, textarea {
+    background-color: rgb(146, 141, 141);
+    align-self: center;
+}
+
+/* .red {
+    text-align: center;
+    position: absolute;
+    border: 3px solid white;
+   padding:10%;
+    margin: 10%;
+    
+}
+ */
+
+#green{
+    
+    
+    height: 90%;
+    width: 100%;
+}
+
+#red{
+    border: 3px solid white;
+    max-width: 90%;
+    height: 10%;
+    align-self: center;
+}
+
+#red2 {
+    border: 3px solid white;
+    max-width: 90%;
+    height: 10%;
+    align-self: center;
+}
+
+table {
+    padding: 3%;
+}

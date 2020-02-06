@@ -18,8 +18,9 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="2DGame.js"></script>
-    <link rel="stylesheet" type="text/css" href="2DGame.css">
-
+    
+        <link rel="stylesheet" type="text/css" href="2DGame.css">
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
         canvas {
@@ -38,10 +39,10 @@
                     var myGamePiece;
 
                     function startGame() {
+                        myGamePiece = new component(30, 30, "cyan", 10, 120);
                         myGameArea.start();
-                        myGamePiece - new component(30, 30, "cyan", 30, 120);
                     }
-                    // Canvas for the game 
+
                     var myGameArea = {
                         canvas: document.createElement("canvas"),
                         start: function () {
@@ -49,6 +50,10 @@
                             this.canvas.height = 400;
                             this.context = this.canvas.getContext("2d");
                             document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                            this.interval = setInterval(updateGameArea, 20);
+                        },
+                        clear: function () {
+                            this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
                         }
                     }
 
@@ -57,13 +62,23 @@
                         this.height = height;
                         this.x = x;
                         this.y = y;
-                        ctx = myGameArea.context;
-                        ctx.fillStyle = color;
-                        ctx.fillRect(this.x, this.y, this.width, this.height);
+                        this.update = function () {
+                            ctx = myGameArea.context;
+                            ctx.fillStyle = color;
+                            ctx.fillRect(this.x, this.y, this.width, this.height);
+                        }
+                    }
+
+                    function updateGameArea() {
+                        myGameArea.clear();
+                        myGamePiece.update();
                     }
                 </script>
             </div>
-            <div class="row">
+            <div class="row" class="bottom">
+                <p> Here I added the game peice to use as the character in the game as well as added in a function to make the game run at 50 frames per second</p>
+            </div>
+            <div class="col" class="bottom">
                 <a href="2DGame-1.html"> <button type"button" class="button"> Last </button> </a>
                 <a href="2DGame-3.html"> <button type"button" class="button"> Next </button> </a>
             </div>

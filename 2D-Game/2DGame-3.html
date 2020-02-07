@@ -33,7 +33,7 @@
 
 <body onload="startGame()">
     <div class="container">
-        <div class="col">
+        <div class="col" >
             <div calss="row" id="GameArea">
                 <script>
                     // Variable for the game peice
@@ -67,25 +67,41 @@
                             ctx = myGameArea.context;
                             ctx.fillStyle = color;
                             ctx.fillRect(this.x, this.y, this.width, this.height);
+                        }  
+                        this.newPos = function(){
+                            this.x += this.speedX;
+                            this.y += this.speedY
                         }
                     }
-
+                    //Moves peice up
+                    function moveup(){
+                        myGamePiece.speedY = -1;
+                    }
+                    //Moves peice down
+                    function movedown(){
+                        myGamePiece.speedY = 1;
+                    }
+                    //Moves piece left
+                    function moveleft (){
+                        myGamePiece.speedX = -1;
+                    }
+                    //Moves peice right
+                    function moveright() {
+                        myGamePiece.speedX = 1;
+                    }
+                    //Stops the piece
                     function updateGameArea() {
                         myGameArea.clear();
                         myGamePiece.update();
                     }
                 </script>
             </div>
-            <div class="row" class="bottom">
-                <p> Here I added the game peice to use as the character 
-                    in the game as well as added in a function to make the 
-                    game run at 50 frames per second</p>
-                    <br>
-                 <p>I also have changed the Game area colour and border</p>   
+            <div class="row" class="bottom" >
+                <p> This will be text to share what I have done </p>   
             </div>
-            <div class="col" class="bottom" class="Buttons">
-                <a href="2DGame-1.html"> <button type"button" class="button" id="last"> Last </button> </a>
-                <a href="2DGame-3.html"> <button type"button" class="button" id="next"> Next </button> </a>
+            <div class="col" class="bottom" class="Buttons" >
+                <a href="2DGame-2.html"> <button type"button" class="button" id="last"> Last </button> </a>
+                <a href="2DGame-4.html"> <button type"button" class="button" id="next"> Next </button> </a>
             </div>
 
 

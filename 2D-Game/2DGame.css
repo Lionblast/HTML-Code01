@@ -1,6 +1,7 @@
 .container {
     width: 70%;
     height: 95%;
+    align-content: center;
     
 }
 
@@ -25,3 +26,14 @@ p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 }
+
+.Buttons {
+    align-content: center;
+    margin: 3%;
+}
+/*
+#last, #next {
+    
+    
+}
+*/

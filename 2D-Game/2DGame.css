@@ -7,8 +7,7 @@
 
 
 .bottom {
-    border: 3px solid gold;
-    background-color: darkgreen;
+  margin-top: 5px;
 }
 
 #GameArea {
@@ -37,3 +36,8 @@ p {
     
 }
 */
+
+#Moves {
+    margin-bottom: 5%;
+    margin-top: 5px;
+}

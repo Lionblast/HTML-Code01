@@ -1,0 +1,11 @@
+.container {
+    height: 95%;
+    width: 95%;
+}
+.col {
+    align-content: center;
+}
+.date {
+    text-align: center;
+    border: 3px solid black;
+}

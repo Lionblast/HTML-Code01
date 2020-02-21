@@ -128,9 +128,9 @@
                             maxHeight = 100;
                             height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
                             minGap = 100;
-                            maxGap = 200;
+                            maxGap = 150;
                             gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-                            // myObstacles.push(new component(10, height, "green", x, 0));
+                            myObstacles.push(new component(5, height, "red", x, 0));
                             myObstacles.push(new component(5, x - height - gap, "red", x, height + gap));
                         }
                         for (i = 0; i < myObstacles.length; i += 1) {
@@ -175,8 +175,8 @@
                 </script>
             </div>
             <div class="col" id="Moves">
-                <button onmousedown="accelerate(-0.5)" onmouseup="accelerate(0.1)">Jump</button>
-                <br>
+                
+                
                 <br>
                 <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
                 <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
@@ -187,11 +187,11 @@
             </div>
             <div class="col" class="bottom">
                 <div class="row" class="bottom">
-                    <p> Here I added gravity and a floor to make the game playable </p>
+                    <p> I added an obsitcal from the room to make the game more difficult  </p>
                 </div>
                 <div class="col" class="bottom" class="Buttons">
-                    <a href="2DGame-4.html"> <button type"button" class="button" id="last"> Last </button> </a>
-                    <a href="2DGame-6.html"> <button type"button" class="button" id="next"> Next </button> </a>
+                    <a href="2DGame-5.html"> <button type"button" class="button" id="last"> Last </button> </a>
+                    <a href="2DGame-7.html"> <button type"button" class="button" id="next"> Next </button> </a>
                 </div>
             </div>
 

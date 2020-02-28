@@ -39,9 +39,11 @@
                     // Variable for the game peice
                     var myGamePiece;
                     var myObstacles = [];
+                    var myScore
 
                     function startGame() {
                         myGamePiece = new component(30, 30, "cyan", 10, 120);
+                        myScore = new component("30px", "Consolas", "black", 600, 40, "text");
                         myGameArea.start();
                     }
 
@@ -63,7 +65,8 @@
                         }
                     }
                     //Gravity control
-                    function component(width, height, color, x, y) {
+                    function component(width, height, color, x, y, type) {
+                        this.type = type;
                         this.width = width;
                         this.height = height;
                         this.x = x;
@@ -74,22 +77,28 @@
                         this.gravitySpeed = 0;
                         this.update = function () {
                             ctx = myGameArea.context;
-                            ctx.fillStyle = color;
-                            ctx.fillRect(this.x, this.y, this.width, this.height);
+                            if (this.type == "text") {
+                                ctx.font = this.width + " " + this.height;
+                                ctx.fillStyle = color;
+                                ctx.fillText(this.text, this.x, this.y);
+                            } else {
+                                ctx.fillStyle = color;
+                                ctx.fillRect(this.x, this.y, this.width, this.height);
+                            }
                         }
-                        
+
                         this.newPos = function () {
                             this.gravitySpeed += this.gravity;
                             this.x += this.speedX;
                             this.y += this.speedY + this.gravitySpeed;
                             this.hitBottom();
                         }
-//Fine tuning grav
+                        //Fine tuning grav
                         this.hitBottom = function () {
                             var rockbottom = myGameArea.canvas.height - this.height;
                             if (this.y > rockbottom) {
                                 this.y = rockbottom
-                                this.gravitySpeed=0;
+                                this.gravitySpeed = 0;
                             }
                         }
 
@@ -137,6 +146,8 @@
                             myObstacles[i].x += -1;
                             myObstacles[i].update();
                         }
+                        myScore.text = "SCORE: " + myGameArea.frameNo;
+                        myScore.update();
                         myGamePiece.newPos();
                         myGamePiece.update();
                     }
@@ -174,25 +185,29 @@
                     }
                 </script>
             </div>
-            <div class="col" id="Moves">
-                
-                
+            <div class="row" id="Moves">
+
+<div class="col">
                 <br>
                 <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
                 <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
-                <button onmousedown="moveright()" onmouseup="clearmove()"
-                    ontouchstart="moveright()">RIGHT</button><br><br>
-                <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
-
+                <button onmousedown="moveright()" onmouseup="clearmove()"ontouchstart="moveright()">RIGHT</button>
+                
+                    <br><br>
+                    <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+                </div>
+                <div class="col">
+                    <a href="2DGame-7.html"> <button type"button" class="button" id="restart"> Restart </button> </a>
+</div>
             </div>
             <div class="col" class="bottom">
                 <div class="row" class="bottom">
-                    <p> I added an obsitcal from the roof to make the game more difficult, 
-                        removed the jump button.  </p>
+                    <p> I added score to the game to players know how well they have done and I have also added a 
+                        Restart button to allow the user to restart the game with ease. </p>
                 </div>
                 <div class="col" class="bottom" class="Buttons">
-                    <a href="2DGame-5.html"> <button type"button" class="button" id="last"> Last </button> </a>
-                    <a href="2DGame-7.html"> <button type"button" class="button" id="next"> Next </button> </a>
+                    <a href="2DGame-6.html"> <button type"button" class="button" id="last"> Last </button> </a>
+                    <a href="2DGame-8.html"> <button type"button" class="button" id="next"> Next </button> </a>
                 </div>
             </div>
 

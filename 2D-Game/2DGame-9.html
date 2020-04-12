@@ -42,7 +42,7 @@
                     var myScore
 
                     function startGame() {
-                        myGamePiece = new component(30, 30, "Walking-man.GIF", 10, 120, "image");
+                        myGamePiece = new component(30, 30, "cyan", 250, 399);
                         myScore = new component("30px", "Consolas", "black", 600, 40, "text");
                         myGameArea.start();
                     }
@@ -67,10 +67,6 @@
                     //Gravity control
                     function component(width, height, color, x, y, type) {
                         this.type = type;
-                        if (type == "image") {
-                            this.image = new Image();
-                            this.image.src = color;
-                        }
                         this.width = width;
                         this.height = height;
                         this.x = x;
@@ -81,15 +77,6 @@
                         this.gravitySpeed = 0;
                         this.update = function () {
                             ctx = myGameArea.context;
-                            if (type == "image") {
-                                ctx.drawImage(this.image,
-                                    this.x,
-                                    this.y,
-                                    this.width, this.height);
-                            } else {
-                                ctx.fillStyle = color;
-                                ctx.fillRect(this.x, this.y, this.width, this.height);
-                            }
                             if (this.type == "text") {
                                 ctx.font = this.width + " " + this.height;
                                 ctx.fillStyle = color;
@@ -125,8 +112,7 @@
                             var othertop = otherobj.y;
                             var otherbottom = otherobj.y + (otherobj.height);
                             var crash = true;
-                            if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (
-                                    myleft >
+                            if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft >
                                     otherright)) {
                                 crash = false;
                             }
@@ -166,6 +152,8 @@
                         myGamePiece.update();
                     }
 
+                    
+
                     function everyinterval(n) {
                         if ((myGameArea.frameNo / n) % 1 == 0) {
                             return true;
@@ -201,26 +189,27 @@
             </div>
             <div class="row" id="Moves">
 
-                <div class="col">
-                    <br>
-                    <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
-                    <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
-                    <button onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button>
-
-                    <br><br>
-                    <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+<div class="col">
+                <br>
+                <button onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">/\</button><br><br>
+          <!-- <button onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
+                <button onmousedown="moveright()" onmouseup="clearmove()"ontouchstart="moveright()">RIGHT</button>
+                --> 
+                   <!-- <br><br> -->
+                    <button onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">\/</button>
                 </div>
                 <div class="col">
-                    <a href="2DGame-8.html"> <button type"button" class="button" id="restart"> Restart </button> </a>
-                </div>
+                    <a href="2DGame-9.html"> <button type"button" class="button" id="restart"> Restart </button> </a>
+</div>
             </div>
             <div class="col" class="bottom">
                 <div class="row" class="bottom">
-                    <p> I attempted to add a model that would change based off the player's movements </p>
+                    <p> I removed the Left and right arrows because they had no use for the game play, and it also takes 
+                        away the ability for players to cheat in the game too and exploit bugs. </p>
                 </div>
                 <div class="col" class="bottom" class="Buttons">
-                    <a href="2DGame-7.html"> <button type"button" class="button" id="last"> Last </button> </a>
-                    <a href="2DGame-9.html"> <button type"button" class="button" id="next"> Next </button> </a>
+                    <a href="2DGame-8.html"> <button type"button" class="button" id="last"> Last </button> </a>
+                    <a href="2DGame-10.html"> <button type"button" class="button" id="next"> Next </button> </a>
                 </div>
             </div>
 

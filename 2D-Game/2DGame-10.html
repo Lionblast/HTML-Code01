@@ -145,7 +145,7 @@
                             gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
                             myObstacles.push(new component(5, height, "red", x, 0));
                             myObstacles.push(new component(5, x - height - gap, "red", x, height + gap));
-                        }
+                        } //pt 2 for speed
                         for (i = 0; i < myObstacles.length; i += 1) {
                             myObstacles[i].x += -3;
                             myObstacles[i].update();
@@ -211,9 +211,14 @@
                     <p> I have increased the down button's speed so that the player can reset their time in the
                         air quicker. I have also increased the up button's speed to compensate for the game's faster pace.  </p>
                 </div>
+                <div class="row">
                 <div class="col" class="bottom" class="Buttons">
                     <a href="2DGame-9.html"> <button type"button" class="button" id="last"> Last </button> </a>
                     <a href="GameStart.html"> <button type"button" class="button" id="next"> Next </button> </a>
+                </div>
+                <div class="col" class="bottom">
+                    <a href="GameStart.html"> <button type"button" class="button"> Main Menu </button> </a>
+                 </div>
                 </div>
             </div>
 
